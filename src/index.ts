@@ -8,6 +8,9 @@ app.use(express.json());
 
 app.get('/user/:userName/repos', controller.getRepos);
 app.get('/user/:userName', controller.getUser);
+app.get('/health', (req, res) => {
+  return res.status(200).json('STATUS UP');
+});
 
 app.use('/', (req, res) => {
   return res.status(404).json('Invalid URL');
