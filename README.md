@@ -20,8 +20,8 @@ npm run start
 2. **`/user/:userName/repos`**: [List all the public repositories of the User](https://github.com/vanshul02/github-fetch#list-repositories).
 
 ## Fetch User Details
-Example URL: `https://localhost:8080/user/vanshul02`
-Example Response:
+- Example URL: `https://localhost:8080/user/vanshul02`
+- Example Response:
 ```json
 {
    "login": "vanshul02",
@@ -60,8 +60,8 @@ Example Response:
 ```
 
 ## List Repositories
-Example URL: `https://localhost:8080/user/vanshul02/repos`
-Example Response:
+- Example URL: `https://localhost:8080/user/vanshul02/repos`
+- Example Response:
 ```json
 [
    {
