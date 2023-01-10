@@ -2,7 +2,8 @@
 API that can fetch a user's details and their public repositories by consuming GitHub API.
 
 ## Steps to Set-Up
-1. Clone this repository by using: ```bash
+1. Clone this repository by using: 
+```bash
 git clone https://github.com/vanshul02/github-fetch.git
 ```
 2. In the directory of api run this command to download the dependencies required:
