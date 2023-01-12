@@ -16,7 +16,13 @@ export const getRepos = async (req: Request, res: Response) => {
       console.log('CONTROLLER getRepo ERR: ', err);
       if (axios.isAxiosError(err)) {
         return res
-          .status(err.status !== undefined ? err.status : 500)
+          .status(
+            err.response !== undefined
+              ? err.response.status !== undefined
+                ? err.response.status
+                : 500
+              : 500
+          )
           .json(err.message);
       } else {
         // Just a stock error
@@ -39,7 +45,13 @@ export const getUser = async (req: Request, res: Response) => {
       console.log('CONTROLLER getUser ERR: ', err);
       if (axios.isAxiosError(err)) {
         return res
-          .status(err.status !== undefined ? err.status : 500)
+          .status(
+            err.response !== undefined
+              ? err.response.status !== undefined
+                ? err.response.status
+                : 500
+              : 500
+          )
           .json(err.message);
       } else {
         // Just a stock error
