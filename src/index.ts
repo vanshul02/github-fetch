@@ -1,10 +1,12 @@
 import * as express from 'express';
+import * as cors from 'cors';
 import * as controller from '../controllers/controller';
 
 const app = express();
 const port = process.env.PORT || 8080;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/user/:userName/repos', controller.getRepos);
 app.get('/user/:userName', controller.getUser);
