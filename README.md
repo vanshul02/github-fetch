@@ -1,5 +1,6 @@
 # GitHub-Fetch API
-API that can fetch a user's details and their public repositories by consuming GitHub API.
+API that can fetch a user's details and their public repositories by consuming GitHub API.<br/>
+Deployed Link: <https://githubfetch.onrender.com>
 
 ## Steps to Set-Up
 1. Clone this repository by using: 
