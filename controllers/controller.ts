@@ -2,6 +2,10 @@ import {Request, Response} from 'express';
 import {RootRepoObject, RootUserObject} from '../interfaces/interface';
 import axios, {AxiosError} from 'axios';
 
+const isInstanceOfAxiosError = (obj: any): obj is AxiosError => {
+  return 'isAxiosError' in obj;
+};
+
 export const getRepos = async (req: Request, res: Response) => {
   const userName = req.params.userName;
   console.log('CONTROLLER getRepo INFO: ', userName);
@@ -12,9 +16,9 @@ export const getRepos = async (req: Request, res: Response) => {
       console.log('CONTROLLER getRepo INFO: ', repoData);
       return res.status(200).json(repoData);
     })
-    .catch((err: AxiosError | Error) => {
+    .catch(err => {
       console.log('CONTROLLER getRepo ERR: ', err);
-      if (axios.isAxiosError(err)) {
+      if (isInstanceOfAxiosError(err)) {
         return res
           .status(
             err.response !== undefined
@@ -41,9 +45,9 @@ export const getUser = async (req: Request, res: Response) => {
       console.log('CONTROLLER getUser INFO: ', userData);
       return res.status(200).json(userData);
     })
-    .catch((err: AxiosError | Error) => {
+    .catch(err => {
       console.log('CONTROLLER getUser ERR: ', err);
-      if (axios.isAxiosError(err)) {
+      if (isInstanceOfAxiosError(err)) {
         return res
           .status(
             err.response !== undefined

@@ -4,7 +4,7 @@
   "description": "Fetches List of GitHub Repos for a particular username",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "start": "node --loader ts-node/esm src/index.ts",
     "dev": "npx tsnd --respawn src/index.ts",
     "lint": "gts lint",
